@@ -1,6 +1,5 @@
 import { useState } from "react";
-import { Link } from "react-router-dom";
-import { BsEye, BsEyeSlash } from "react-icons/bs";
+import { BsEyeSlash, BsEye } from "react-icons/bs";
 
 import FormControl from "../../components/atoms/forms/FormControl";
 import FormGroup from "../../components/atoms/forms/FormGroup";
@@ -10,21 +9,20 @@ import Button from "../../components/atoms/Button";
 import AuthLayout from "../../components/layouts/AuthLayout";
 import manAtWork from "../../assets/img/hr-1.png";
 
-export default function Login() {
+export default function PasswordReset() {
   const [showPassword, setShowPassword] = useState(false);
+  const [showConfirmPassword, setShowConfirmPassword] = useState(false);
 
   return (
     <AuthLayout image={manAtWork} showSignUp>
       <AuthPageHeader 
-        subtitle="Welcome back!!"
-        mainTitle="Please Sign In"/>
+        subtitle="Password recovery"
+        mainTitle="Password reset">
+        <p className="mt-1">Kindly enter a new password</p>
+      </AuthPageHeader>
       <form>
         <FormGroup className="mb-6">
-          <Label className="mb-1 inline-block">Email address</Label>
-          <FormControl placeholder="Enter email address" />
-        </FormGroup>
-        <FormGroup className="mb-6">
-          <Label className="mb-1 inline-block">Password</Label>
+          <Label className="mb-2 inline-block" htmlFor="newPassword">New password</Label>
           <FormControl type={showPassword ? "text" : "password"} id="newPassword">
             <button className="text-2xl" type="button"
               onClick={() => setShowPassword(!showPassword)}>
@@ -32,15 +30,17 @@ export default function Login() {
             </button>
           </FormControl>
         </FormGroup>
-        <div className="flex items-center justify-between mb-14">
-          <Label className="flex gap-2">
-            <input type="checkbox" />
-            Remember me
-          </Label>
-          <Link to="/forgot-password" className="text-blue-500 hover:underline">I forgot my password</Link>
-        </div>
-        <div className="flex flex-col items-stretch">
-          <Button variant="primary">Sign In</Button>
+        <FormGroup className="mb-6">
+          <Label className="mb-2 inline-block" htmlFor="confirmPassword">Confirm new password</Label>
+          <FormControl type={showConfirmPassword ? "text" : "password"} id="confirmPassword">
+            <button className="text-2xl" type="button"
+              onClick={() => setShowConfirmPassword(!showConfirmPassword)}>
+              {!showConfirmPassword ? <BsEyeSlash/> : <BsEye/>}
+            </button>
+          </FormControl>
+        </FormGroup>
+        <div className="flex flex-col items-stretch mt-14">
+          <Button variant="primary">Reset</Button>
         </div>
       </form>
     </AuthLayout>
