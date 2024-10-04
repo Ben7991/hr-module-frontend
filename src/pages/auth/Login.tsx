@@ -9,6 +9,7 @@ import AuthPageHeader from "../../components/molecules/AuthPageHeader";
 import Button from "../../components/atoms/Button";
 import AuthLayout from "../../components/layouts/AuthLayout";
 import manAtWork from "../../assets/img/hr-1.png";
+import { HiArrowNarrowRight } from "react-icons/hi";
 
 export default function Login() {
   const [showPassword, setShowPassword] = useState(false);
@@ -37,10 +38,10 @@ export default function Login() {
             <input type="checkbox" />
             Remember me
           </Label>
-          <Link to="/forgot-password" className="text-blue-500 hover:underline">I forgot my password</Link>
+          <Link to="/forgot-password" className="text-blue-500 hover:underline flex gap-1 items-center">I forgot my password<HiArrowNarrowRight/></Link>
         </div>
         <div className="flex flex-col items-stretch">
-          <Button variant="primary">Sign In</Button>
+          <Button variant="primary" type="submit">Sign In</Button>
         </div>
       </form>
     </AuthLayout>

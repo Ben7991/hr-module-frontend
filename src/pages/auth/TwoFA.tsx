@@ -20,7 +20,7 @@ export default function TwoFA() {
           <FormControl />
         </div>
         <div className="flex flex-col items-stretch mt-14">
-          <Button variant="primary">Send</Button>
+          <Button variant="primary" type="submit">Send</Button>
         </div>
       </form>
     </AuthLayout>

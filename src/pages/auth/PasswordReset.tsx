@@ -7,14 +7,14 @@ import Label from "../../components/atoms/forms/Label";
 import AuthPageHeader from "../../components/molecules/AuthPageHeader";
 import Button from "../../components/atoms/Button";
 import AuthLayout from "../../components/layouts/AuthLayout";
-import manAtWork from "../../assets/img/hr-1.png";
+import cantRemember from "../../assets/img/hr-3.png";
 
 export default function PasswordReset() {
   const [showPassword, setShowPassword] = useState(false);
   const [showConfirmPassword, setShowConfirmPassword] = useState(false);
 
   return (
-    <AuthLayout image={manAtWork} showSignUp>
+    <AuthLayout image={cantRemember} showSignUp>
       <AuthPageHeader 
         subtitle="Password recovery"
         mainTitle="Password reset">
@@ -40,7 +40,7 @@ export default function PasswordReset() {
           </FormControl>
         </FormGroup>
         <div className="flex flex-col items-stretch mt-14">
-          <Button variant="primary">Reset</Button>
+          <Button variant="primary" type="submit">Reset</Button>
         </div>
       </form>
     </AuthLayout>
