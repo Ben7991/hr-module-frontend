@@ -12,7 +12,7 @@ export default function App() {
     { path: "forgot-password", element: <ForgotPassword/> },
     { path: "2fa", element: <TwoFA/> },
     { path: "password-reset", element: <PasswordReset/> },
-    { path: "email-verification", element: <EmailVerification/>}
+    { path: "email-verification", element: <EmailVerification/> },
   ]);
 
   return <RouterProvider router={appRouter}/>
