@@ -1,8 +1,8 @@
 import AuthLayout from "../../components/layouts/AuthLayout";
 import AuthPageHeader from "../../components/molecules/AuthPageHeader";
 import cantRemember from "../../assets/img/hr-3.png";
-import FormControl from "../../components/atoms/forms/FormControl";
 import Button from "../../components/atoms/Button";
+import OTP from "../../components/molecules/OTP";
 
 export default function EmailVerification() {
   return (
@@ -14,12 +14,7 @@ export default function EmailVerification() {
       </AuthPageHeader>
       <form>
         <div className="flex gap-3 h-14 w-[100%]">
-          <FormControl />
-          <FormControl />
-          <FormControl />
-          <FormControl />
-          <FormControl />
-          <FormControl />
+          <OTP />
         </div>
         <div className="flex flex-col items-stretch mt-14">
           <Button variant="primary" type="submit">Send</Button>
